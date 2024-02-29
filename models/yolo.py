@@ -39,6 +39,7 @@ from models.common import (
     Concat,
     Contract,
     Conv,
+    Conv_CBAM,
     CrossConv,
     DetectMultiBackend,
     DWConv,
@@ -394,6 +395,7 @@ def parse_model(d, ch):
         n = n_ = max(round(n * gd), 1) if n > 1 else n  # depth gain
         if m in {
             Conv,
+            Conv_CBAM,
             GhostConv,
             Bottleneck,
             GhostBottleneck,
